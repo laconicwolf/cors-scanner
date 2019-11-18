@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 
 __author__ = "Jake Miller (@LaconicWolf)"
 __date__ = "20191119"
 __version__ = "0.01"
-__description__ = """A multi-threaded scanner to discover CORS flaws."""
+__description__ = """A multi-threaded scanner to help discover CORS flaws."""
 
 
 import sys
@@ -147,7 +147,6 @@ def parse_cors_response_headers(response):
 
 
 def make_request(sess, url):
-    #print(url)
     """Makes a request and returns a response object."""
     try: 
         return sess.get(url, verify=False)
