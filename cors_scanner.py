@@ -16,7 +16,6 @@ if not sys.version.startswith('3'):
 import os
 import threading
 import time
-import random
 import argparse
 from queue import Queue
 from urllib.parse import urlparse
