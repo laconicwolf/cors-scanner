@@ -132,17 +132,17 @@ def parse_cors_response_headers(response):
     """
     cors_response_headers = {}
     if 'Access-Control-Allow-Origin' in response.headers.keys():
-        cors_response_headers['acao'] = response.headers.get('Access-Control-Allow-Origin')
+        cors_response_headers['acao'] = response.headers.get('Access-Control-Allow-Origin').replace(',',';')
     if 'Access-Control-Allow-Credentials' in response.headers.keys():
-        cors_response_headers['acac'] = response.headers.get('Access-Control-Allow-Credentials')
+        cors_response_headers['acac'] = response.headers.get('Access-Control-Allow-Credentials').replace(',',';')
     if 'Access-Control-Allow-Methods' in response.headers.keys():
-        cors_response_headers['acam'] = response.headers.get('Access-Control-Allow-Methods')
+        cors_response_headers['acam'] = response.headers.get('Access-Control-Allow-Methods').replace(',',';')
     if 'Access-Control-Allow-Headers' in response.headers.keys():
-        cors_response_headers['acah'] = response.headers.get('Access-Control-Allow-Headers')
+        cors_response_headers['acah'] = response.headers.get('Access-Control-Allow-Headers').replace(',',';')
     if 'Access-Control-Max-Age' in response.headers.keys():
-        cors_response_headers['acma'] = response.headers.get('Access-Control-Max-Age')
+        cors_response_headers['acma'] = response.headers.get('Access-Control-Max-Age').replace(',',';')
     if 'Access-Control-Expose-Headers' in response.headers.keys():
-        cors_response_headers['aceh'] = response.headers.get('Access-Control-Expose-Headers')
+        cors_response_headers['aceh'] = response.headers.get('Access-Control-Expose-Headers').replace(',',';')
     return cors_response_headers
 
 
