@@ -147,6 +147,7 @@ def parse_cors_response_headers(response):
 
 
 def make_request(sess, url):
+    #print(url)
     """Makes a request and returns a response object."""
     try: 
         return sess.get(url, verify=False)
@@ -303,6 +304,10 @@ def build_request_object():
 
 
 def test_cors_policy(url):
+    """Runs several tests on a URL, each making a request with 
+    a different Origin header value. The responses are parsed and 
+    written to a CSV file.
+    """
     existing_cors_policy(url)
     null_origin(url)
     reflected_origin(url)
@@ -438,10 +443,11 @@ if __name__ == '__main__':
     time.sleep(3)
 
     if not args.verbose:
-        # Initializes progress bar if not verbose
+        # Initializes progress bar
         p_bar = tqdm.tqdm(range(len(urls)))
         counter = 0
 
+    # Shared data variable
     data = []
 
     main()
